@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 @Entity(name = "tb_account")
 public class Account {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

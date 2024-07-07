@@ -2,6 +2,8 @@ package emerson.dio.santander_dev_week.domain.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity(name = "tb_card")
 public class Card {
 
@@ -13,8 +15,8 @@ public class Card {
     @Column(unique = true)
     private String number;
 
-    @Column(name = "available_limit", scale = 13, precision = 2)
-    private Float limit;
+    @Column(name = "available_limit", precision = 13, scale = 2)
+    private BigDecimal limit;
 
     public Long getId() {return id;}
 
@@ -24,7 +26,7 @@ public class Card {
 
     public void setNumber(String number) {this.number = number;}
 
-    public Float getLimit() {return limit;}
+    public BigDecimal getLimit() {return limit;}
 
-    public void setLimit(Float limit) {this.limit = limit;}
+    public void setLimit(BigDecimal limit) {this.limit = limit;}
 }

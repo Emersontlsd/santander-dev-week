@@ -26,6 +26,10 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
+bootRun {
+	systemProperties['server.port'] = '8081'  // Porta desejada, por exemplo 8081
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }

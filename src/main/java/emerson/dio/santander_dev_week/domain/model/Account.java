@@ -2,6 +2,8 @@ package emerson.dio.santander_dev_week.domain.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity(name = "tb_account")
 public class Account {
 
@@ -15,11 +17,11 @@ public class Account {
 
     private String agency;
 
-    @Column(scale = 13, precision = 2)
-    private Float balance;
+    @Column(precision = 13, scale = 2)
+    private BigDecimal balance;
 
-    @Column(name = "additional_limit", scale = 13, precision = 2)
-    private Float limit;
+    @Column(name = "additional_limit", precision = 13, scale = 2)
+    private BigDecimal limit;
 
     public Long getId() {return id;}
 
@@ -33,11 +35,11 @@ public class Account {
 
     public void setAgency(String agency) {this.agency = agency;}
 
-    public Float getBalance() {return balance;}
+    public BigDecimal getBalance() {return balance;}
 
-    public void setBalance(Float balance) {this.balance = balance;}
+    public void setBalance(BigDecimal balance) {this.balance = balance;}
 
-    public Float getLimit() {return limit;}
+    public BigDecimal getLimit() {return limit;}
 
-    public void setLimit(Float limit) {this.limit = limit;}
+    public void setLimit(BigDecimal limit) {this.limit = limit;}
 }
